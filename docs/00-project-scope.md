@@ -1,7 +1,3 @@
-
-### `docs/00-project-scope.md`
-
-```md
 # Project Scope
 
 ## Purpose
