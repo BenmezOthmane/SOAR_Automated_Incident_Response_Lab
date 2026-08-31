@@ -19,8 +19,9 @@ Simulated Suspicious Execution → Endpoint and Network Telemetry
 → Risk Decision → Notification / Case / Containment
 ```
 
-Completion Criteria
-- Suspicious behavior is visible in Splunk.
-- A correlation rule identifies the behavior.
-- Shuffle enriches available indicators.
-- The response follows the defined risk policy.
+## Completion Criteria
+- Authentication and lateral movement events are ingested.
+- Splunk correlates the events.
+- Shuffle receives account and host context.
+- The workflow sends the correct notification or containment action.
+
