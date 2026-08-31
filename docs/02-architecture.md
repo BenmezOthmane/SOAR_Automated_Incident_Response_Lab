@@ -38,3 +38,21 @@ The lab uses a local-first architecture. Security telemetry is generated and pro
  │ Medium Risk: TheHive case / analyst review   │
  │ High Risk: Temporary containment + case      │
  └──────────────────────────────────────────────┘
+```
+
+| Source | Destination | Purpose | Protocol / Port |
+|---|---|---|---|
+| Suricata | Splunk | Alert ingestion | TODO |
+| Splunk | Shuffle | Workflow trigger | HTTPS / Webhook |
+| Shuffle | VirusTotal | IOC lookup | HTTPS |
+| Shuffle | Discord | Notification | HTTPS |
+| Shuffle | TheHive | Case creation | HTTPS |
+| Shuffle | Firewall | Temporary block action | TODO |
+
+## Security Requirements
+- Use HTTPS for API communications whenever supported.
+- Store all credentials outside version control.
+- Validate and sanitize IOC fields before using them in firewall commands.
+- Maintain an allowlist for internal infrastructure and trusted services.
+- Record every automated response action in Splunk and/or TheHive.
+
